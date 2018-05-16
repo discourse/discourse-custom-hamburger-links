@@ -1,5 +1,5 @@
 Hamburger_links:
   type: list
-  default: "Footer Link,https://google.com,f|General link,https://twitter.com,g"
+  default: "Footer Link,https://google.com,f|General Link,https://twitter.com,g"
   description:
     en: 'Comma delimited in this order: Text;URL;Location. Text is what appears on the menu. URL is the path for the link. Location is where you want the link to appear. There are two options "g" for generalLinks and "f" for footerLinks.'
