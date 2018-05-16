@@ -1,5 +1,5 @@
 Hamburger_links:
   type: list
-  default: "Latest;topics with recent posts;/latest|Categories;all topics grouped by category;/categories|Top;the most active topics in the last year, month, week or day;/top"
+  default: "Footer Link,https://google.com,f|General link,https://twitter.com,g"
   description:
     en: 'Comma delimited in this order: Text;URL;Location. Text is what appears on the menu. URL is the path for the link. Location is where you want the link to appear. There are two options "g" for generalLinks and "f" for footerLinks.'
