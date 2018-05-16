@@ -5,15 +5,15 @@ var hmcl = settings.Hamburger_links,
 $.each(sec, function(value) {
   var sec = $.map(this.split(","), $.trim);
 
-  if (sec[0] === "g") {
+  if (sec[2] === "g") {
     loc = "generalLinks";
   }
-  if (sec[0] === "f") {
+  if (sec[2] === "f") {
     loc = "footerLinks";
   }
 
   api.decorateWidget("hamburger-menu:" + loc, () => {
-    return { href: sec[2], rawLabel: sec[1] };
+    return { href: sec[2], rawLabel: sec[0] };
   });
 });
 </script>
