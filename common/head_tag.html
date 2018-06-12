@@ -1,19 +1,21 @@
 <script type="text/discourse-plugin" version="0.8.18">
-var hmcl = settings.Hamburger_links,
-  sec = $.map(hmcl.split("|"), $.trim);
+$(function() {
+  var hmcl = settings.Hamburger_links,
+    sec = $.map(hmcl.split("|"), $.trim);
 
-$.each(sec, function(value) {
-  var sec = $.map(this.split(","), $.trim);
+  $.each(sec, function(value) {
+    var sec = $.map(this.split(","), $.trim);
 
-  if (sec[2] === "g") {
-    loc = "generalLinks";
-  }
-  if (sec[2] === "f") {
-    loc = "footerLinks";
-  }
+    if (sec[2] === "g") {
+      loc = "generalLinks";
+    }
+    if (sec[2] === "f") {
+      loc = "footerLinks";
+    }
 
-  api.decorateWidget("hamburger-menu:" + loc, () => {
-    return { href: sec[1], rawLabel: sec[0] };
+    api.decorateWidget("hamburger-menu:" + loc, () => {
+      return { href: sec[1], rawLabel: sec[0] };
+    });
   });
 });
 </script>
