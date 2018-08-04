@@ -13,9 +13,12 @@ $(function() {
       loc = "footerLinks";
     }
 
-    api.decorateWidget("hamburger-menu:" + loc, () => {
-      return { href: sec[1], rawLabel: sec[0] };
-    });
+  var classname = sec[0].replace(/\s+/g, '-').toLowerCase();
+
+  api.decorateWidget("hamburger-menu:" + loc, () => {
+    return { href: sec[1], rawLabel: sec[0], className: "custom-hamburger-link "+classname };
+  });
+
   });
 });
 </script>
