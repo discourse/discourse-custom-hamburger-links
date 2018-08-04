@@ -2,23 +2,23 @@
 $(function() {
   var hmcl = settings.Hamburger_links,
     sec = $.map(hmcl.split("|"), $.trim);
-
   $.each(sec, function(value) {
     var sec = $.map(this.split(","), $.trim);
-
     if (sec[2] === "g") {
       loc = "generalLinks";
     }
     if (sec[2] === "f") {
       loc = "footerLinks";
     }
-
-  var classname = sec[0].replace(/\s+/g, '-').toLowerCase();
-
-  api.decorateWidget("hamburger-menu:" + loc, () => {
-    return { href: sec[1], rawLabel: sec[0], className: "custom-hamburger-link "+classname };
-  });
-
+    var classname = sec[0].replace(/\s+/g, "-").toLowerCase();
+    api.decorateWidget("hamburger-menu:" + loc, () => {
+      return {
+        href: sec[1],
+        rawLabel: sec[0],
+        className: "custom-hamburger-link " + classname
+      };
+    });
   });
 });
+
 </script>
