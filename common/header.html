@@ -1,6 +1,7 @@
 <script type="text/discourse-plugin" version="0.8.18">
 var hmcl = settings.Hamburger_links,
-  sec = $.map(hmcl && hmcl.split("|"), $.trim);
+  sec = hmcl ? $.map(hmcl.split("|"), $.trim) : false;
+
 $.each(sec, function(value) {
   var sec = $.map(this.split(","), $.trim);
   if (sec[2] === "g") {
