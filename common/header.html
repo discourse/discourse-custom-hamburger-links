@@ -9,13 +9,16 @@ $.each(sec, function(value) {
   if (sec[2] === "f") {
     loc = "footerLinks";
   }
-  var classname = sec[0].replace(/\s+/g, "-").toLowerCase();
-  api.decorateWidget("hamburger-menu:" + loc, () => {
-    return {
-      href: sec[1],
-      rawLabel: sec[0],
-      className: "custom-hamburger-link " + classname
-    };
-  });
+  const classname = sec[0].replace(/\s+/g, "-").toLowerCase();
+  const currentUser = api.getCurrentUser();
+  if ((sec [3] === "Y") || (currentUser !== null)) {
+      api.decorateWidget("hamburger-menu:" + loc, () => {
+        return {
+          href: sec[1],
+          rawLabel: sec[0],
+          className: "custom-hamburger-link " + classname
+        };
+      });
+  }
 });
 </script>
