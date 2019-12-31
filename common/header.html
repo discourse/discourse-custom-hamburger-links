@@ -11,7 +11,7 @@ $.each(sec, function(value) {
   }
   const classname = sec[0].replace(/\s+/g, "-").toLowerCase();
   const currentUser = api.getCurrentUser();
-  if ((sec [3] === "Y") || (currentUser !== null)) {
+  if ((sec [3] === "N") || (currentUser !== null)) {
       api.decorateWidget("hamburger-menu:" + loc, () => {
         return {
           href: sec[1],
