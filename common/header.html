@@ -3,6 +3,7 @@ var hmcl = settings.Hamburger_links,
   sec = $.map(hmcl.split("|"), $.trim);
 $.each(sec, function(value) {
   var sec = $.map(this.split(","), $.trim);
+  var loc;
   if (sec[2] === "g") {
     loc = "generalLinks";
   }
