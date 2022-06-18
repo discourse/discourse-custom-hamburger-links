@@ -1,6 +1,6 @@
 {
   "name": "Hamburger links component",
-  "about_url": "https://meta.discourse.org/t/87644",
   "component": true,
+  "about_url": "https://meta.discourse.org/t/87644",
   "license_url": "https://github.com/discourse/discourse-custom-hamburger-links/blob/main/LICENSE"
 }
