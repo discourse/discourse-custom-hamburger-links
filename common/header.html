@@ -4,6 +4,7 @@
     let className = `custom-hamburger-link ${rawLabel.replace(/\s+/g, "-").toLowerCase()}`;
     loc = "f" === loc ? "footerLinks" : "generalLinks";
     target = "blank" === target ? "_blank" : "";
+    loggedUser = "Y" === loggedUser ? "Y" : "N";
     const currentUser = api.getCurrentUser();
     if ((loggedUser === "N") || (currentUser !== null)) {
       api.decorateWidget(`hamburger-menu:${loc}`, () => {
