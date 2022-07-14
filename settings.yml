@@ -1,6 +1,12 @@
 Hamburger_links:
   type: list
   list_type: simple
-  default: "Footer Link,https://google.com,f|General Link,https://twitter.com,g,blank"
+  default: "fab-chrome,Footer Link,https://google.com,f|fab-twitter,General Link,https://twitter.com,g,blank"
   description:
-    en: 'Comma delimited in this order: Text,URL,Location,Target.<br><b>Text:</b> what appears on the menu.<br><b>URL:</b> the path for the link.<br><b>Location:</b> where you want the link to appear. Use "g" for generalLinks and "f" for footerLinks.<br><b>Target (optional):</b> use "blank" to open the link in a new tab.'
+    en: 'Comma delimited in this order: Icon,Text,URL,Location,Target.<br><b>Icon:</b> fontawesome icon<br><b>Text:</b> what appears on the menu.<br><b>URL:</b> the path for the link.<br><b>Location:</b> where you want the link to appear. Use "g" for generalLinks and "f" for footerLinks.<br><b>Target (optional):</b> use "blank" to open the link in a new tab.'
+Svg_icons:
+  type: "list"
+  list_type: "compact"
+  default: "fab-chrome|fab-twitter"
+  description:
+    en: "Include FontAwesome 5 icon classes for each icon used in the list."
