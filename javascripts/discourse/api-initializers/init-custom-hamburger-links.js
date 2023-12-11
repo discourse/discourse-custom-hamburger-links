@@ -1,22 +1,17 @@
 import { apiInitializer } from "discourse/lib/api";
 
 export default apiInitializer("0.8.18", (api) => {
-  (settings.Hamburger_links || "").split("|").forEach((link) => {
-    let [rawLabel, href, loc, target] = (link || "").split(",");
-    let className = `custom-hamburger-link ${rawLabel
-      .replace(/\s+/g, "-")
-      .toLowerCase()}`;
+  (settings.Hamburger_links || "").split("|").forEach((link, index) => {
+    let [rawLabel, href] = (link || "").split(",");
 
-    loc = "f" === loc ? "footerLinks" : "generalLinks";
-    target = "blank" === target ? "_blank" : "";
-
-    api.decorateWidget(`hamburger-menu:${loc}`, () => {
-      return {
-        href,
-        rawLabel,
-        className,
-        attributes: { target },
+    api.addCommunitySectionLink((baseSectionLink) => {
+      return class CustomSectionLink extends baseSectionLink {
+        name = `custom-link-${index + 1}`;
+        href = href;
+        route = "";
+        text = rawLabel;
+        title = rawLabel;
       };
-    });
+    }, false);
   });
 });
