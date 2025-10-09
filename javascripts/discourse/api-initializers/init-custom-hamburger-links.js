@@ -1,6 +1,6 @@
 import { apiInitializer } from "discourse/lib/api";
 
-export default apiInitializer("0.8.18", (api) => {
+export default apiInitializer((api) => {
   (settings.Hamburger_links || "").split("|").forEach((link, index) => {
     let [rawLabel, href] = (link || "").split(",");
 
